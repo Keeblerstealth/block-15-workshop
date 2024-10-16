@@ -18,31 +18,41 @@ let flavorArray = flavorString.split(`,`)
 // console.log(flavorArray)
 
   // create empty object named flavors by visit ro something like that
-const flavorObject = {}
+let flavorObject = {}
 // console.log(flavorObject)
     //  make for loop on the array that...
 
-
   for (let i = 0; i < flavorArray.length; i++) {
-    const currentFlavor = flavorArray[i];
+    let currentFlavor = flavorArray[i];
+
+    console.log(`outer loop`)
+    // console.log(flavorArray[i])
           // assigns currewnt value from array index
+    // console.log(currentFlavor)
+    console.log(`is currentFlavor = undefined`)
+    console.log(Boolean(flavorObject[flavorArray[i]] === undefined) )
+    if (flavorObject[flavorArray[i]] === undefined) {
+      // else? if the current array item (flavor) is not in the object flavor (ie object.arrayitem is not defined)
+      // then create a new key on the object with the name that is the string of the current array value and set it to 1
+      flavorObject[flavorArray[i]] = 1;
+      // console.log(flavorObject)
+    }
+    console.log(flavorObject)
     console.log(currentFlavor)
     
           //  make interior for in loop on flavors by visit that.
   
-    for(key in flavorObject) {
-      console.log(`hello man`)
-      console.log(key)
-      console.log(currentFlavor)  
+    for (keys in flavorObject) {
+      console.log(`inner loop`)
+      console.log(keys)
+       console.log(currentFlavor)  
       // check if current value is the same as the current flavors
-      if (currentFlavor === key) {
+      console.log(`is currentFlavor  = to keys`)
+      console.log(Boolean(currentFlavor === keys))
+      if (currentFlavor === keys) {
                   // then take the current value of that keys element and add 1
-        flavorObject.key = flavorObject.key + 1
-      } else if (flavorObject.currentFlavor === undefined) {
-          // else? if the current array item (flavor) is not in the object flavor (ie object.arrayitem is not defined)
-          // then create a new key on the object with the name that is the string of the current array value and set it to 1
-          flavorObject.currentFlavor = 1
-        }
+        flavorObject[keys] =+ 1
+      } 
       }
       // console.log(`hello man`)
 }
@@ -55,7 +65,7 @@ return flavorObject
     
 // return funtoin
 
-// return flavorObject;
+
 
 
 // call funtoin with inpput from the user
